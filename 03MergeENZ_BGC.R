@@ -24,8 +24,11 @@ summary(BGCdat)
 temp1 <- filter(ENZdat, SITE %in% c("UMC", "LSP", "SPR"))
 head(temp1)
 unique(temp1$SITE)
-View (temp1)
+View (temp2)
 temp2 <- filter(BGCdat, SITE %in% c("UMC", "LSP", "SPR"))
+
+temp.join <- full_join( temp1, temp2, by= "PLOTID")
+View(temp.join)
 
 # Example of how to use tapply
 # #calculate weekly and daily values for plots
