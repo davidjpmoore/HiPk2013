@@ -9,6 +9,11 @@
 
 load (file="HiPK2013.rda")
 
+# open libraries
+library(dplyr)
+library(shiny)
+library(ggplot2)
+
 #Enzyme dataset has more sites than BGC dataset 
 unique(BGCdat$SITE)
 unique(ENZdat$SITE)
@@ -17,8 +22,8 @@ summary(BGCdat)
 
 # Trying to make temp subset dataframes of UMC, LSP and SPR from ENZdat and BGCdat
 temp1 <- filter(ENZdat, SITE %in% c("UMC", "LSP", "SPR"))
-head(temp)
-unique(temp$SITE)
+head(temp1)
+unique(temp1$SITE)
 View (temp1)
 temp2 <- filter(BGCdat, SITE %in% c("UMC", "LSP", "SPR"))
 
