@@ -5,7 +5,9 @@ library(shiny)
 library(ggplot2)
 #Load the HiPK2013 dataset containing all the data frames
 
-load (file="HiPK2013.rdata")
+#rm(list = ls())
+
+load (file="HiPK2013.rda")
 
 #to diplay data in dataframes as summary tables
 tbl_df(FLUXdat)
@@ -58,9 +60,10 @@ summary(PYRdat$week)
 
 
 
+save (BGCdat,DISdef, ENZdat, FLUXdat, PYRdat, file="HiPK2013.rda")
 
 
 
-
-#
-pH_bp1 = tapply(ENZdat$pH,ENZdat[,c("PLOTID")],mean, na.rm=TRUE)
+# 
+# #
+# pH_bp1 = tapply(ENZdat$pH,ENZdat[,c("PLOTID")],mean, na.rm=TRUE)
