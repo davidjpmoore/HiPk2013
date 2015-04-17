@@ -15,6 +15,13 @@ unique(ENZdat$SITE)
 
 summary(BGCdat)
 
+# Trying to make temp subset dataframes of UMC, LSP and SPR from ENZdat and BGCdat
+temp1 <- filter(ENZdat, SITE %in% c("UMC", "LSP", "SPR"))
+head(temp)
+unique(temp$SITE)
+View (temp1)
+temp2 <- filter(BGCdat, SITE %in% c("UMC", "LSP", "SPR"))
+
 # Example of how to use tapply
 # #calculate weekly and daily values for plots
 # weeklyNEE= tapply(USNR1_99on$NEE, weeknumIND, mean, na.rm = TRUE)
