@@ -23,39 +23,39 @@ glimpse(FLUXdat)
 #Adding a NEW VARIABLE called rDate to the Enzyme data frame
 #from rDate I can ask R to generate year, month, week of year, day of month etc
 ENZdat$rDate = as.Date(ENZdat$SampleDate, "%m/%d/%Y")
-ENZdat$month = as.numeric(strftime(ENZdat$rDate, format = "%m"))
-ENZdat$week = as.numeric(strftime(ENZdat$rDate, format = "%W"))
-summary(ENZdat$week)
+ENZdat$MONTH = as.numeric(strftime(ENZdat$rDate, format = "%m"))
+ENZdat$WEEK = as.numeric(strftime(ENZdat$rDate, format = "%W"))
+summary(ENZdat$WEEK)
 #not an ISOdate
 
 #BGCdat has Date stored as a number instead of a string
 #convert it - this may be clunky but I converted the Number to a character and then defined separate character variables for YEAR, MONTH and DAY, then combined them to create an rDate object which is comparable to ENZdat$rDate 
 D1=as.character(BGCdat$Date)
     BGCdat$YEAR = substr(D1, 1, 4)
-    BGCdat$MONTH = substr(D1, 5, 6)
-    BGCdat$DAY = substr(D1, 7, 8)
-BGCdat$rDate  = ISOdate(BGCdat$YEAR,BGCdat$MONTH,BGCdat$DAY)
-BGCdat$month = as.numeric(strftime(BGCdat$rDate, format = "%m"))
-BGCdat$week = as.numeric(strftime(BGCdat$rDate, format = "%W"))
+    BGCdat$MONTH = as.numeric(substr(D1, 5, 6))
+    BGCdat$DAY = as.numeric(substr(D1, 7, 8))
+BGCdat$rDate  = as.Date(ISOdate(BGCdat$YEAR,BGCdat$MONTH,BGCdat$DAY))
+BGCdat$MONTH = as.numeric(strftime(BGCdat$rDate, format = "%m"))
+BGCdat$WEEK = as.numeric(strftime(BGCdat$rDate, format = "%W"))
 
 #FLUXdat is similar to ENZdat
 F1=as.character(FLUXdat$Date)
 FLUXdat$YEAR = substr(F1, 1, 4)
 FLUXdat$MONTH = substr(F1, 5, 6)
 FLUXdat$DAY = substr(F1, 7, 8)
-FLUXdat$rDate  = ISOdate(FLUXdat$YEAR,FLUXdat$MONTH,FLUXdat$DAY)
+FLUXdat$rDate  = as.Date(ISOdate(FLUXdat$YEAR,FLUXdat$MONTH,FLUXdat$DAY))
 
-FLUXdat$month = as.numeric(strftime(FLUXdat$rDate, format = "%m"))
-FLUXdat$week = as.numeric(strftime(FLUXdat$rDate, format = "%W"))
-summary(FLUXdat$week)
+FLUXdat$MONTH = as.numeric(strftime(FLUXdat$rDate, format = "%m"))
+FLUXdat$WEEK = as.numeric(strftime(FLUXdat$rDate, format = "%W"))
+summary(FLUXdat$WEEK)
 
 #PYRdat has dates listed as YEAR, MONTH and DAY which are NUMBERS
 PYRdat$rDate =as.Date(ISOdate (PYRdat$YEAR,PYRdat$MONTH,PYRdat$DAY))
 #need to add the HHMMSS to the rDate variable for Flux data
 
-PYRdat$month = as.numeric(strftime(PYRdat$rDate, format = "%m"))
-PYRdat$week = as.numeric(strftime(PYRdat$rDate, format = "%W"))
-summary(PYRdat$week)
+PYRdat$MONTH = as.numeric(strftime(PYRdat$rDate, format = "%m"))
+PYRdat$WEEK = as.numeric(strftime(PYRdat$rDate, format = "%W"))
+summary(PYRdat$WEEK)
 
 
 
