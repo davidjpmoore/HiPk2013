@@ -28,10 +28,12 @@ PYRdat = read.csv("data/PyrolysisAllSitesRelativeProportions_MASTER.csv",header=
 #to do:
 #read in the series of topographic data files from Rebecca's analysis
 
+TRNdat = read.table("data/Final_Terrain4715.txt", sep="\t", header=TRUE)
+
 #next steps:
 #explore and plot variables within each data frame
 #calculate summary statistics for key variables
 #merge key variables to allow regression analysis
 
 #after you have read in the data - save the bundle of dataframes to an rData file so that you can load it later.
-save (BGCdat,DISdef, ENZdat, FLUXdat, PYRdat, file="HiPK2013.rda")
+save (BGCdat,DISdef, ENZdat, FLUXdat, PYRdat, TRNdat, file="HiPK2013.rda")

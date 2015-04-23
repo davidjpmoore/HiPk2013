@@ -60,7 +60,7 @@ summary(PYRdat$WEEK)
 
 
 
-save (BGCdat,DISdef, ENZdat, FLUXdat, PYRdat, file="HiPK2013.rda")
+save (BGCdat,DISdef, ENZdat, FLUXdat, PYRdat, TRNdat, file="HiPK2013.rda")
 
 
 
