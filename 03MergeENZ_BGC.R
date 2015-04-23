@@ -16,7 +16,10 @@ library(ggplot2)
 
 #Enzyme dataset has more sites than BGC dataset 
 unique(BGCdat$SITE)
-unique(ENZdat$SITE)
+unique(TRNdat$PLOTID)
+SITEtrn=as.factor(substr(TRNdat$PLOTID,1,3)) 
+
+unique(SITEtrn)
 
 summary(BGCdat)
 
