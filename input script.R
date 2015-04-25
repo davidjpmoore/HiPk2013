@@ -29,6 +29,14 @@ PYRdat = read.csv("data/PyrolysisAllSitesRelativeProportions_MASTER.csv",header=
 #read in the series of topographic data files from Rebecca's analysis
 
 TRNdat = read.table("data/Final_Terrain4715.txt", sep="\t", header=TRUE)
+unique(TRNdat$PLOTID)
+SITEtrn=as.factor(substr(TRNdat$PLOTID,1,3))
+
+unique(SITEtrn)
+
+m=merge(DISdef,TRNdat,by="PLOTID")
+View(m)
+#Merge disturbance variables with terrain variables for analysis
 
 #next steps:
 #explore and plot variables within each data frame
