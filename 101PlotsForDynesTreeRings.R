@@ -23,16 +23,6 @@ DENdat = read.csv("data/FEF2013DendroYOD.csv",header=TRUE)
 
 #Figure EFFLUX 
 
-
-
-
-
-
-
-
-
-
-
 plot(DENdat$Phase, DENdat$D_YOD)
 plot(DENdat$Phase, DENdat$Ph_YOD)
 plot(DENdat$Ph_YOD)
